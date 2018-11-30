@@ -4,4 +4,30 @@ body{
 }
 p{
     margin: 12px 0px !important;
+    text-align: justify;
+}
+h4{
+    font-size: 13pt !important;
+    margin: 12px 0px !important;
+}
+h3{
+    font-size: 15pt !important;
+    margin: 12px 0px !important;
+}
+h2{
+    font-size: 19pt !important;
+    margin: 12px 0px !important;
+}
+h1{
+    font-size: 27pt !important;
+    margin: 12px 0px !important;
+}
+a{
+    color: #0080ff !important;
+}
+#contents{
+    line-height: 19pt !important;
+}
+#meta{
+    margin: 0px 0px 12px 0px !important;
 }
