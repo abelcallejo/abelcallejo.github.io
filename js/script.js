@@ -1,4 +1,10 @@
 jQuery(document).ready(function(){
+    function getLastWeekStart(baseline){
+        var dayIndex = baseline.getDay();
+        var start = baseline - ((dayIndex + 7) * (1000*60*60*24));
+        return new Date(start);
+    }
+    
     jQuery.get( "https://api.github.com/repos/abelcallejo/abelcallejo.github.io/commits", function( data ) {
     var lastCommit = new Date(data[0].commit.author.date);
 
@@ -6,26 +12,26 @@ jQuery(document).ready(function(){
     var days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
     
     var timeStamp = new Date();
+    var yesterday = new Date();
+    yesterday.setDate(timeStamp.getDate() - 1);
+    
+    var lastWeek = getLastWeekStart(timeStamp);
 
     var difference = Math.floor((timeStamp - lastCommit) / (1000*60*60*24));
     
     var asOf = "";
 
-    if( difference==1 )
-        {
-        asOf = "just yesterday";
-        }
-    else if( difference==0 )
+    if( lastCommit.getFullYear()==timeStamp.getFullYear() && lastCommit.getMonth()==timeStamp.getMonth() && lastCommit.getDate()==timeStamp.getDate() )
         {
         asOf = "just today";
+        }
+    else if( lastCommit.getFullYear()==yesterday.getFullYear() && lastCommit.getMonth()==yesterday.getMonth() && lastCommit.getDate()==yesterday.getDate() )
+        {
+        asOf = "just yesterday";
         }
     else if( lastCommit.getFullYear()==timeStamp.getFullYear() && lastCommit.getMonth()==timeStamp.getMonth() && lastCommit.getDate()<=timeStamp.getDate() )
         {
         asOf = "this month";
-        }
-    else if( difference>=28 )
-        {
-        asOf = months[lastCommit.getMonth()] + ' ' + lastCommit.getDate() + ', ' + lastCommit.getFullYear();
         }
     else if( difference>=21 )
         {
@@ -35,13 +41,16 @@ jQuery(document).ready(function(){
         {
         asOf = "2 weeks ago";
         }
-    else if( difference>=7 )
+    else if( lastWeek<=lastCommit )
         {
         asOf = "last week";
         }
     else if( difference>=2 )
         {
         asOf = "this passed " + days[lastCommit.getDay()];
+        }
+    else{
+        asOf = months[lastCommit.getMonth()] + ' ' + lastCommit.getDate() + ', ' + lastCommit.getFullYear();
         }
     
     var hour = 0;
