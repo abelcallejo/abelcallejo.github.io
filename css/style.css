@@ -53,3 +53,19 @@ a{
 .major-outline>li>ol{
     list-style-type: upper-latin;
 }
+
+/** Notes **/
+.note-item{
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+}
+.note-title{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.note-type,.note-date{
+    color:#808080;
+}
+#note-blueprint{
+    display: none;
+}
