@@ -12,13 +12,18 @@
     <script src="js/context.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130176417-1"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        /** Google Analytics **/
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'UA-130176417-1');
+        gtag('config', 'UA-130176417-1');
+
+        /** Google reCAPTCHA **/
     </script>
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -52,7 +57,7 @@
     <article class="container">
         <header class="row" id="main-header">
             <div class="col-xs-4 col-sm-2">
-                <img src="https://avatars0.githubusercontent.com/u/5888376" class="img-responsive" id="photo" />
+                <img src="images/abel-callejo.jpg" class="img-responsive" id="photo" />
             </div>
             <div class="col-sx-8 col-sm-10">
                 <h1 id="abelcallejo">Abel Callejo</h1>
@@ -100,9 +105,15 @@
                 <section>
                     <h3 id="family">Family</h3>
                     <p>I grew up with a family of 6 members -- count includes my parents. I'm next to the eldest child and by no doubt I'm surely the most handsome child among the siblings. That is how it was for a couple of decades and seven revolutions around the sun.</p>
-                    <img src="images/johnny-callejo-family.jpg" class="img-responsive" />
+                    <div class="tv text-center rounded-corner">
+                        <img src="images/johnny-callejo-family.jpg" class="img-responsive" />
+                        <div class="figure-caption-white">Left to right: Papa, Mama, Me, Dadal, Eula, and Ate</div>
+                    </div>
                     <p>Currently, I'm having another itinerary of the journey. Me and my wife have already started a new family. We've been living together for 9 years before our fruitful relationship produced an offspring.</p>
+                    <div class="tv text-center rounded-corner">
                     <img src="images/abel-callejo-family.jpg" class="img-responsive" />
+                        <div class="figure-caption-white">Left to right: Me, Gohan, and Cheche</div>
+                    </div>
                 </section>
                 <section>
                     <h3 id="labels">Labels</h3>
@@ -121,39 +132,68 @@
                     <h3 id="online-realms">Online realms</h3>
                     <p>In cases you don't see me around roaming physically, you can get in touch with me through the my favorite online realms.</p>
                     <div class="row">
-                        <p class="col-sm-3 col-md-2">
-                            <span>StackOverflow</span><br/>
-                            <a href="https://stackoverflow.com/users/1121841/abel-callejo">abel-callejo</a>
+                        <p class="col-sm-3">
+                            <span>Stackoverflow</span><br/>
+                            <a href="https://stackoverflow.com/users/1121841/abel-callejo?tab=topactivity" class="digital-font">#1121841</a>
                         </p>
-                        <div class="col-sm-9 col-md-10">
+                        <div class="col-sm-9">
                             <p>I work as a programmer and there is this global Q&A site for programmers wherein programmers like me can ask and/or answer programming-related questions. What I like the most about this realm is that the greatest answers to the posted questions are those with highly objective contexts. Thus giving reliable contents for those seeking the truth whether its related to an error, programming paradigm, so on.</p>
                             <p>So basically the site tries to strip away the highly subjective stuffs to produce quality content.</p>
                         </div>
-                        <p class="col-sm-3 col-md-2">
-                            <span>GitHub</span><br/>
-                            <a href="https://github.com/abelcallejo">abelcallejo</a>
+                        <p class="col-sm-3">
+                            <span>Github</span><br/>
+                            <a href="https://github.com/abelcallejo" class="digital-font">abelcallejo</a>
                         </p>
-                        <div class="col-sm-9 col-md-10">
+                        <div class="col-sm-9">
                             <p>As you can see, the domain name of this official website contains a "github" keyword in it. This official website is sponsored by GitHub. Users of github are allowed to build their own website via the "github.io" domain.</p>
                             <p>Anyway, github allows programmers to exchange source-codes globally. Whether you are working with a huge proprietary software or an open-source project, github can really help a lot. That is why I hang in there for a huge part of my daily life.</p>
-                            <p>The github community though is a bit obfuscated though. It doesn't look as what it seems when you first look at it.</p>
+                            <p>The github community though is a bit obfuscated. It doesn't look as what it seems when you first look at it.</p>
+                        </div>
+                        <p class="col-sm-3">
+                            <span>Twitter</span><br/>
+                            <a href="https://twitter.com/abelcallejo" class="digital-font">@abelcallejo</a>
+                        </p>
+                        <div class="col-sm-9">
+                            <p>I work as a programmer and there is this global Q&A site for programmers wherein programmers like me can ask and/or answer programming-related questions. What I like the most about this realm is that the greatest answers to the posted questions are those with highly objective contexts. Thus giving reliable contents for those seeking the truth whether its related to an error, programming paradigm, so on.</p>
+                            <p>So basically the site tries to strip away the highly subjective stuffs to produce quality content.</p>
+                        </div>
+                        <p class="col-sm-3">
+                            <span>E-mail</span><br/>
+                            <span class="shown-for-humans-only">Shown for humans&nbsp;only</span>
+                        </p>
+                        <div class="col-sm-9">
+                            <p>For work-related concerns please contact me thru my IRRI email address. On the other hand, contact me thru my Gmail. Just please don't spam me though.</p>
+                            <div class="g-recaptcha" data-sitekey="6LcPf7IUAAAAAEljBETW3rfuyoiJGNECTloNrdHg"></div>
+                        </div>
+                        <p class="col-sm-3">
+                            <span>SMS</span><br/>
+                            <span class="shown-for-humans-only">Shown for humans&nbsp;only</span>
+                        </p>
+                        <div class="col-sm-9">
+                            <p>For immediate concerns, feel free to call me using this number but if you just want to leave me a message, a text-message is also okay. Again, please don't spam me.</p>
+                            <div class="g-recaptcha" data-sitekey="6LcPf7IUAAAAAEljBETW3rfuyoiJGNECTloNrdHg"></div>
                         </div>
                     </div>
                 </section>
                 <section>
                     <h2 id="interests">Interests</h2>
-                    <p>I have lots of interests. Most of which are my childhood thoughts that are up to this day still bothering me.</p>
+                    <p>I have lots of interests. Most of which are my childhood thoughts that are up to this day still bothering me. Which is why I am still in pursuit of the answers.</p>
+                    <div class="tv tv-black text-center rounded-corner">
+                        <img src="images/tim-and-eric.mindblown.gif" />
+                        <div class="figure-caption-black">Mindblown meme</div>
+                    </div>
                 </section>
                 <section>
                     <h3>Quantum world</h3>
-                    <p>Ever since I was a kid, I've always wondered on the actual size of the universe. It turns out there is a quantifiable number to it. There's that! However, during my mid-twenties I tried to understand how light works. It turns out light works like a particle and wave both at the same time. Wierd enough but it is what is. Then even further I learned about how much we do not know about dark matter and dark energy, it is becoming weirder.</p>
-                    <p>The deeper you go with the quantum world, the weirder it becomes. Richard Feynman even said "If you think you understand quantum mechanics, you don't understand quantum mechanics." The quote is very famous to physicists because not only does it makes a lot of sense, it is also a funny joke.</p>
+                    <p>Ever since I was a kid, I've always wondered on the actual size of the universe. It turns out there is a quantifiable number to it. Then during my mid-twenties I tried to understand how light works. It turns out light works like a particle and wave both at the same time. Wierd enough but it is what is. Then even further I learned about how much we do not know about dark matter and dark energy, it is becoming weirder.</p>
+                    <p>The deeper you go with the quantum world, the more you will find yourself mind blown about its intricate details. Richard Feynman even said "If you think you understand quantum mechanics, you don't understand quantum mechanics." The quote is very humorous and makes a lot of sense.</p>
                 </section>
                 <section>
                     <h3>Theory of evolution</h3>
                     <p>Back again when I was still a kid, it bothered me a lot why most animals I saw have tails. That's right I'm into tails.</p>
-                    <p>Most of the mammals have tails. A sub-classification of mammals are primates. Most of the primates have tails. A sub-classification of primates are apes and monkeys. </p>
-                    <p>My man Charles Darwin figured it out hundreds of years ago.</p>
+                    <p>Most of the mammals have tails. A sub-classification of mammals are primates. Sub-classifications of primates are apes and monkeys. It is this divide between monkeys and apes which facinated me so much because it is about the "tailed" and the "non-tailed". Fascinating!</p>
+                    <p>My man Charles Darwin figured it out hundreds of years ago. He figured it out through visual observation only. To think it was very revolutionary that time knowing that it is 2 centuries earlier before DNA was demystified in 1953.</p>
+                    <p>I wished I had access to so much information about evolutionary biology when I was still a kid. I was innocent enough to believe in Noah's retarded story.</p>
                 </section>
             </div>
         </div>
