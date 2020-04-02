@@ -1,7 +1,7 @@
 var notes = new Array();
 
 var loaded = 0;
-var toBeLoaded = 3;
+var toBeLoaded = 4;
 
 function sortByDateDesc( a, b ){
 	if ( a.date > b.date ){
@@ -60,6 +60,7 @@ function fillStackOverflowTitles(){
 				for (i = 0; i < notes.length; i++) {
 					if(notes[i].post_id==element.question_id){
 						notes[i].title = element.title;
+						notes[i].complete = true;
 					}
 				}
 			});
@@ -93,6 +94,32 @@ jQuery.get( "https://api.stackexchange.com/2.2/users/1121841/questions?order=des
 	loaded = loaded + 1;
 	paint();
 });
+
+
+/** AskUbuntu Questions **/
+jQuery.get( "https://api.stackexchange.com/2.2/users/191051/questions?order=desc&sort=votes&site=askubuntu", function( data ) {
+
+	data.items.forEach(function(element) {
+	  	var posted = new Date(0);
+	  	posted.setUTCSeconds(element.creation_date);
+
+	  	var item = {
+	  		title: element.title,
+	  		link: element.link,
+	  		date: posted,
+	  		type: 'System management topic',
+	  		icon: 'askubuntu',
+	  		complete: true,
+	  		post_id: element.question_id
+	  	};
+
+	  	notes.push(item);
+	});
+
+	loaded = loaded + 1;
+	paint();
+});
+
 
 /** StackOverflow Answers **/
 jQuery.get( "https://api.stackexchange.com/2.2/users/1121841/answers?order=desc&sort=votes&site=stackoverflow", function( data ) {
