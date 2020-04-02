@@ -87,8 +87,8 @@ function fillWordPressTitles(){
 	finalQuestionIds = questionIds.substr(0,questionIds.length-1);
 
 	if(questionIdCount>0){
+		console.log( "https://api.stackexchange.com/2.2/questions/"+finalQuestionIds+"?fromdate=1375315200&order=desc&sort=activity&site=wordpress" );
 		jQuery.get( "https://api.stackexchange.com/2.2/questions/"+finalQuestionIds+"?fromdate=1375315200&order=desc&sort=activity&site=wordpress", function( data ) {
-			console.log( data );
 			data.items.forEach(function(element) {
 				for (i = 0; i < notes.length; i++) {
 					if(notes[i].post_id==element.question_id){
