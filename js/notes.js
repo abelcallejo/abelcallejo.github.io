@@ -88,6 +88,7 @@ function fillWordPressTitles(){
 
 	if(questionIdCount>0){
 		jQuery.get( "https://api.stackexchange.com/2.2/questions/"+finalQuestionIds+"?fromdate=1375315200&order=desc&sort=activity&site=wordpress", function( data ) {
+			console.log( data );
 			data.items.forEach(function(element) {
 				for (i = 0; i < notes.length; i++) {
 					if(notes[i].post_id==element.question_id){
