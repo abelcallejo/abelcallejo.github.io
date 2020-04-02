@@ -1,7 +1,7 @@
 var notes = new Array();
 
 var loaded = 0;
-var toBeLoaded = 4;
+var toBeLoaded = 5;
 
 function sortByDateDesc( a, b ){
 	if ( a.date > b.date ){
@@ -31,6 +31,7 @@ function paint(){
 					jQuery(domNote).attr('id',note.post_id);
 					jQuery(domNote).find('img').attr('src','../images/'+note.icon+'.png');
 					jQuery(domNote).find('a').attr('href',note.link);
+					jQuery(domNote).find('a').attr('target','_'+note.icon);
 					jQuery(domNote).find('h4').html(note.title);
 					jQuery(domNote).find('.note-type').html( note.type );
 					jQuery(domNote).find('.note-date').html( month + ' ' + date + ', ' + year );
@@ -109,6 +110,30 @@ jQuery.get( "https://api.stackexchange.com/2.2/users/191051/questions?order=desc
 	  		date: posted,
 	  		type: 'System management topic',
 	  		icon: 'askubuntu',
+	  		complete: true,
+	  		post_id: element.question_id
+	  	};
+
+	  	notes.push(item);
+	});
+
+	loaded = loaded + 1;
+	paint();
+});
+
+/** WordpressDevelopment Questions **/
+jQuery.get( "https://api.stackexchange.com/2.2/users/58915/questions?order=desc&sort=votes&site=wordpress", function( data ) {
+
+	data.items.forEach(function(element) {
+	  	var posted = new Date(0);
+	  	posted.setUTCSeconds(element.creation_date);
+
+	  	var item = {
+	  		title: element.title,
+	  		link: element.link,
+	  		date: posted,
+	  		type: 'Programming topic',
+	  		icon: 'wordpress',
 	  		complete: true,
 	  		post_id: element.question_id
 	  	};
