@@ -1,7 +1,7 @@
 var notes = new Array();
 
 var loaded = 0;
-var toBeLoaded = 5;
+var toBeLoaded = 6;
 
 function sortByDateDesc( a, b ){
 	if ( a.date > b.date ){
@@ -43,6 +43,7 @@ function paint(){
 	}
 }
 
+/** Support function for StackOverflow Answers **/
 function fillStackOverflowTitles(){
 	var questionIds = '';
 	var finalQuestionIds = '';
@@ -71,6 +72,37 @@ function fillStackOverflowTitles(){
 		});
 	}
 }
+
+/** Support function for WordPressDevelopment Answers **/
+function fillWordPressTitles(){
+	var questionIds = '';
+	var finalQuestionIds = '';
+	var questionIdCount = 0;
+	for (i = 0; i < notes.length; i++) {
+		if( notes[i].complete==false && notes[i].icon=='wordpress' ){
+			questionIds = questionIds + notes[i].post_id + ';';
+			questionIdCount = questionIdCount + 1;
+		}
+	}
+	finalQuestionIds = questionIds.substr(0,questionIds.length-1);
+
+	if(questionIdCount>0){
+		jQuery.get( "https://api.stackexchange.com/2.2/questions/"+finalQuestionIds+"?fromdate=1375315200&order=desc&sort=activity&site=wordpress", function( data ) {
+			data.items.forEach(function(element) {
+				for (i = 0; i < notes.length; i++) {
+					if(notes[i].post_id==element.question_id){
+						notes[i].title = element.title;
+						notes[i].complete = true;
+					}
+				}
+			});
+
+			loaded = loaded + 1;
+			paint();
+		});
+	}
+}
+
 
 /** StackOverflow Questions **/
 jQuery.get( "https://api.stackexchange.com/2.2/users/1121841/questions?order=desc&sort=votes&site=stackoverflow", function( data ) {
@@ -170,6 +202,30 @@ jQuery.get( "https://api.stackexchange.com/2.2/users/1121841/answers?order=desc&
 	fillStackOverflowTitles();
 });
 
+
+/** WordPressDevelopment Answers **/
+jQuery.get( "https://api.stackexchange.com/2.2/users/58915/answers?order=desc&sort=votes&site=wordpress", function( data ) {
+
+	data.items.forEach(function(element) {
+
+	  	var posted = new Date(0);
+	  	posted.setUTCSeconds(element.creation_date);
+
+	  	var item = {
+	  		title: null,
+	  		link: "https://wordpress.stackexchange.com/a/" + element.answer_id,
+	  		date: posted,
+	  		type: 'Programming discussion',
+	  		icon: 'wordpress',
+	  		complete: false,
+	  		post_id: element.question_id
+	  	};
+
+	  	notes.push(item);
+	});
+
+	fillWordPressTitles();
+});
 
 /** GitHub Gists **/
 jQuery.get( "https://api.github.com/users/abelcallejo/gists", function( data ) {
