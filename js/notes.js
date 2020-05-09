@@ -57,7 +57,7 @@ function fillStackOverflowTitles(){
 	finalQuestionIds = questionIds.substr(0,questionIds.length-1);
 
 	if(questionIdCount>0){
-		jQuery.get( "https://api.stackexchange.com/2.2/questions/"+finalQuestionIds+"?fromdate=1375315200&order=desc&sort=votes&site=stackoverflow", function( data ) {
+		jQuery.get( "https://api.stackexchange.com/2.2/questions/"+finalQuestionIds+"?fromdate=1104537600&order=desc&sort=votes&site=stackoverflow", function( data ) {
 			data.items.forEach(function(element) {
 				for (i = 0; i < notes.length; i++) {
 					if(notes[i].post_id==element.question_id){
