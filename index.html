@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/bootstrap.3.3.7.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:400,400i,700" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Abel Callejo</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -22,6 +22,19 @@
         gtag('config', 'UA-130176417-1');
 
         /** Google reCAPTCHA **/
+        function reCAPTCHACallback(token){
+            var thrice = 1917837238800;
+            var last = String.fromCharCode(99, 97, 108, 108, 101, 106, 111);
+            var nick = String.fromCharCode(97, 98, 101, 108, 98, 111, 121);
+            jQuery('#human-email').html('a.'+last+'@irri.org');
+            jQuery('#human-email').attr('href','mailto:a.'+last+'@irri.org');
+            jQuery('#human-email').removeClass('shown-for-humans-only').addClass('realm-node');
+            jQuery('#human-phone').html('+' + (thrice/3));
+            jQuery('#human-phone').attr('href','tel:+' + (thrice/3));
+            jQuery('#human-phone').removeClass('shown-for-humans-only').addClass('realm-node');
+        }
+        
+        console.log("Well, you're about to hack this poor website. What else can I do? ¯\\_(ツ)_/¯");
     </script>
 
 <script type="application/ld+json">
@@ -39,10 +52,11 @@
     "Belboy",
     "Belboi",
   ],
+  "nationality": "PH",
   "gender": {
     "@context": "https://schema.org",
     "@type": "Male"
-  }
+  },
   "url": "https://abelcallejo.github.io/",
   "sameAs": [
     "https://stackoverflow.com/users/1121841/abel-callejo",
@@ -111,7 +125,7 @@
                     </div>
                     <p>Currently, I'm having another itinerary of the journey. Me and my wife have already started a new family. We've been living together for 9 years before our fruitful relationship produced an offspring.</p>
                     <div class="tv text-center rounded-corner">
-                    <img src="images/abel-callejo-family.jpg" class="img-responsive" />
+                        <img src="images/abel-callejo-family.jpg" class="img-responsive" />
                         <div class="figure-caption-white">Left to right: Me, Gohan, and Cheche</div>
                     </div>
                 </section>
@@ -132,46 +146,78 @@
                     <h3 id="online-realms">Online realms</h3>
                     <p>In cases you don't see me around roaming physically, you can get in touch with me through the my favorite online realms.</p>
                     <div class="row">
-                        <p class="col-sm-3">
-                            <span>Stackoverflow</span><br/>
-                            <a href="https://stackoverflow.com/users/1121841/abel-callejo?tab=topactivity" class="digital-font">#1121841</a>
-                        </p>
+                        <div class="col-sm-3">
+                            <a href="https://stackoverflow.com/users/1121841/abel-callejo?tab=topactivity" target="_blank" rel="me nofollow" class="realm-node">
+                            <img src="images/stackoverflow.png"><br/>
+                            1121841</a>
+                        </div>
                         <div class="col-sm-9">
                             <p>I work as a programmer and there is this global Q&A site for programmers wherein programmers like me can ask and/or answer programming-related questions. What I like the most about this realm is that the greatest answers to the posted questions are those with highly objective contexts. Thus giving reliable contents for those seeking the truth whether its related to an error, programming paradigm, so on.</p>
                             <p>So basically the site tries to strip away the highly subjective stuffs to produce quality content.</p>
                         </div>
-                        <p class="col-sm-3">
-                            <span>Github</span><br/>
-                            <a href="https://github.com/abelcallejo" class="digital-font">abelcallejo</a>
-                        </p>
+                        <div class="col-sm-3">
+                            <a href="https://github.com/abelcallejo" target="_blank" rel="me nofollow" class="realm-node">
+                            <img src="images/github.png"><br/>
+                            abelcallejo</a>
+                        </div>
                         <div class="col-sm-9">
-                            <p>As you can see, the domain name of this official website contains a "github" keyword in it. This official website is sponsored by GitHub. Users of github are allowed to build their own website via the "github.io" domain.</p>
+                            <p>As you can see, the domain name of this official website contains a "github" keyword in it. This official website is hosted by GitHub. Users of github are allowed to build their own website via the "github.io" domain.</p>
                             <p>Anyway, github allows programmers to exchange source-codes globally. Whether you are working with a huge proprietary software or an open-source project, github can really help a lot. That is why I hang in there for a huge part of my daily life.</p>
                             <p>The github community though is a bit obfuscated. It doesn't look as what it seems when you first look at it.</p>
                         </div>
-                        <p class="col-sm-3">
-                            <span>Twitter</span><br/>
-                            <a href="https://twitter.com/abelcallejo" class="digital-font">@abelcallejo</a>
-                        </p>
-                        <div class="col-sm-9">
-                            <p>I work as a programmer and there is this global Q&A site for programmers wherein programmers like me can ask and/or answer programming-related questions. What I like the most about this realm is that the greatest answers to the posted questions are those with highly objective contexts. Thus giving reliable contents for those seeking the truth whether its related to an error, programming paradigm, so on.</p>
-                            <p>So basically the site tries to strip away the highly subjective stuffs to produce quality content.</p>
+                        <div class="col-sm-3">
+                            <a href="https://twitter.com/abelcallejo" target="_blank" rel="me nofollow" class="realm-node">
+                            <img src="images/twitter.png"><br/>
+                            abelcallejo</a>
                         </div>
-                        <p class="col-sm-3">
-                            <span>E-mail</span><br/>
-                            <span class="shown-for-humans-only">Shown for humans&nbsp;only</span>
-                        </p>
                         <div class="col-sm-9">
-                            <p>For work-related concerns please contact me thru my IRRI email address. On the other hand, contact me thru my Gmail. Just please don't spam me though.</p>
-                            <div class="g-recaptcha" data-sitekey="6LcPf7IUAAAAAEljBETW3rfuyoiJGNECTloNrdHg"></div>
+                            <p>I don't really use twitter that much but yeah I do have some tweets. Most of which are posts about real-time errors that I found on the internet. Especially to those products and/or services that I have invested some quite amount of time.</p>
+                            <p>I'm still learning on how to properly use the twitter framework though.</p>
                         </div>
+                        <div class="col-sm-3">
+                            <a href="https://www.facebook.com/abelcallejo" target="_blank" rel="me nofollow" class="realm-node">
+                            <img src="images/facebook.png"><br/>
+                            abelcallejo
+                        </a>
+                        </div>
+                        <div class="col-sm-9">
+                            <p>Honestly, I despise facebook the most. Not because of the noise but also that <a href="https://www.facebook.com/help/www/964154640320617/" rel="nofollow">it doesn't have news feed filtering features</a>. You know, there are some things you don't want to see in your news feed. I prefer not seeing any posts about "antivax". Filters like that should be good. I may be back alive to facebook when they have put filter features in-place already. Until then, nah!</p>
+                            <p>I'm only in facebook because the people I care the most are there. Nothing else.</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://m.me/abelcallejo" target="_blank" rel="me nofollow" class="realm-node">
+                            <img src="images/messenger.png"><br/>
+                            abelcallejo</a>
+                        </div>
+                        <div class="col-sm-9">
+                            <p>The alternative way for you to contact me is through Facebook's Messenger. Yeah, feel free to fire me up a message there.</p>
+                            <p>The primary way of contacting me, however, is through the Email or SMS.</p>
+                        </div>
+                    </div>
+                    <div class="box-for-humans rounded-corner">
+                        <div class="row">
+                            <div class="col-sm-3 hidden-xs-down text-right"><br/>Checkpoint</div>
+                            <div class="col-sm-9">
+                                <div class="g-recaptcha" data-sitekey="6LeSgLIUAAAAAIdQZDK0JOhgfdwW3mk4eqTD9VW6" data-callback="reCAPTCHACallback"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <p class="col-sm-3">
-                            <span>SMS</span><br/>
-                            <span class="shown-for-humans-only">Shown for humans&nbsp;only</span>
+                            <img src="images/mail.png"><br/>
+                            <a target="_blank" rel="me nofollow" class="shown-for-humans-only" id="human-email">Shown for humans&nbsp;only</a>
                         </p>
                         <div class="col-sm-9">
-                            <p>For immediate concerns, feel free to call me using this number but if you just want to leave me a message, a text-message is also okay. Again, please don't spam me.</p>
-                            <div class="g-recaptcha" data-sitekey="6LcPf7IUAAAAAEljBETW3rfuyoiJGNECTloNrdHg"></div>
+                            <p>For work-related concerns please contact me thru my IRRI email address. Please don't spam me though.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="col-sm-3">
+                            <img src="images/sms.png"><br/>
+                            <a target="_blank" rel="me nofollow" class="shown-for-humans-only" id="human-phone">Shown for humans&nbsp;only</a>
+                        </p>
+                        <div class="col-sm-9">
+                            <p>For immediate concerns, call me using this number. Alternatively, a 60-character text is also okay. Again, just please don't spam me.</p>
                         </div>
                     </div>
                 </section>
@@ -194,6 +240,51 @@
                     <p>Most of the mammals have tails. A sub-classification of mammals are primates. Sub-classifications of primates are apes and monkeys. It is this divide between monkeys and apes which facinated me so much because it is about the "tailed" and the "non-tailed". Fascinating!</p>
                     <p>My man Charles Darwin figured it out hundreds of years ago. He figured it out through visual observation only. To think it was very revolutionary that time knowing that it is 2 centuries earlier before DNA was demystified in 1953.</p>
                     <p>I wished I had access to so much information about evolutionary biology when I was still a kid. I was innocent enough to believe in Noah's retarded story.</p>
+                </section>
+                <section>
+                    <h2 id="career">Career</h2>
+                    <p>What do I do for a living? Those questions can be answered on these succeeding sections.</p>
+                </section>
+                <section>
+                    <h3 id="specialist">Specialist</h3>
+                    <p>I joined the <a href="https://www.irri.org/">International Rice Research Institute</a> (IRRI) during the last quarter of 2015 as a specialist on information systems.</p>
+                    <div class="tv text-center rounded-corner">
+                        <img src="images/abel-irri.jpg" class="img-responsive" />
+                        <div class="figure-caption-white">2015. Plant Disease Management group under the Crop and Environmental Sciences Division. <i>Photo&nbsp;by&nbsp;Adam&nbsp;Sparks</i></div>
+                    </div>
+                    <p>During my stay in IRRI I was lucky enough to work with amazing people on two nationwide <a href="https://www.bar.gov.ph/index.php/about-us" rel="nofollow">DA</a>-funded projects:</p>
+                    <ul>
+                        <li><a href="https://prism.philrice.gov.ph/" target="_blank" rel="nofollow">Philippine Rice Information System</a> (PRISM)</li>
+                        <li><a href="https://pestrisk.da.gov.ph/" target="_blank" rel="nofollow">Pest Risk Identification and Management</a> (PRIME)
+                        </li>
+                    </ul>
+                    <p>Basically, my responsibilities on the said projects are somewhat of typical IT guy stuffs. Write some software, man some servers, and facilitate the nationwide data collection efforts.</p>
+                    <div class="tv text-center rounded-corner">
+                        <img src="images/abel-irri-prism.jpg" class="img-responsive" />
+                        <div class="figure-caption-white">2016. Me <a href="https://ricetoday.irri.org/philippine-agriculture-experts-test-newly-launched-rice-production-and-monitoring-website/" target="_blank" rel="nofollow">presenting the PRISM website</a> to agriculture executives and other government officials. <i>Photo&nbsp;by&nbsp;Neale&nbsp;Paguirigan</i></div>
+                    </div>
+                    <p>The part that I like the most was the dynamic collaboration among colleagues and working as a team.</p> 
+                    <div class="tv text-center rounded-corner">
+                        <img src="images/prism-irri.jpg" class="img-responsive" />
+                        <div class="figure-caption-white">2017. PRISM got nominated for IRRI's Team of the Year award</div>
+                    </div>
+                    <p>The <a href="https://marlo.cgiar.org/projects/Rice/studySummary.do?studyID=2710&cycle=Reporting&year=2019" target="_blank" rel="nofollow">PRISM project graduated in 2018 from research phase into operational</a> and is now primarily led and managed by DA and PhilRice. The PRIME project, on the other hand, is still on research phase but its operationalization is now being worked out.</p>
+                    <p>Some of the publicly accessible materials that I have reasonable contributions are the following:</p>
+                    <ul>
+                        <li><a href="https://prism.philrice.gov.ph/" target="_blank" rel="nofollow">PRISM Website</a> - The official website of the PRISM project. It started as <u>philippinericeinfo.ph</u> then was changed to <u>riceinfo.ph</u>, then was finally settled to <u>prism.philrice.gov.ph</u> during operationalization. The site's look had went to drastic changes but some of the codes I wrote for it seems to be still there.</li>
+                        <li><a href="https://pestrisk.da.gov.ph/" target="_blank" rel="nofollow">PRIME Website</a> - The official website of the PRIME project.</li>
+                        <li><a href="https://play.google.com/store/apps/details?id=org.prime.collect.android" target="_blank" rel="nofollow">PRIME Collect</a> - The android-based app used as a data collection tool for conducting rice pest surveillance in the Philippines.</li>
+                        <li><a href="https://app.pestrisk.da.gov.ph/" target="_blank" rel="nofollow">PRIME WebApp</a> - The web app used for managing the collected data of the rice pest surveillance in the Philippines.</li>
+                        <li><a href="https://elearning.pestrisk.da.gov.ph/" target="_blank" rel="nofollow">PRIME eLearning</a> - The online learning platform of PRIME for training regional partners on pest identification and management.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 id="masters-degree">Master's degree</h3>
+                    <p>In 2012, I enrolled in UPLB's <a href="http://ics.uplb.edu.ph/degree/mit" target="_blank" rel="nofollow">Master of Information Technology</a> degree program of the Institute of Computer Science.</p>
+                    <div class="tv text-center rounded-corner">
+                        <img src="images/up.jpg" class="img-responsive" />
+                        <div class="figure-caption-white">2015. Graduation photo of me wearing "<a href="https://our.upd.edu.ph/acad.php" target="_blank" rel="nofollow">Sablay</a>" the official academic costume of the UP system</div>
+                    </div>
                 </section>
             </div>
         </div>

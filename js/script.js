@@ -1,9 +1,38 @@
-jQuery(document).ready(function(){
     function getLastWeekStart(baseline){
         var dayIndex = baseline.getDay();
         var start = baseline - ((dayIndex + 7) * (1000*60*60*24));
         return new Date(start);
     }
+
+    function getLastLastWeekStart(baseline){
+        var dayIndex = baseline.getDay();
+        var start = baseline - ((dayIndex + 14) * (1000*60*60*24));
+        return new Date(start);
+    }
+
+    function getLastLastLastWeekStart(baseline){
+        var dayIndex = baseline.getDay();
+        var start = baseline - ((dayIndex + 21) * (1000*60*60*24));
+        return new Date(start);
+    }
+
+    function getLastMonthStart(baseline){
+        var thisMonthIndex = baseline.getMonth();
+        var thisYear = baseline.getFullYear();
+        
+        var lastMonthStart;
+        if(0<thisMonthIndex){
+            lastMonthStart = new Date(thisYear+'-'+thisMonthIndex+'-01');
+            return lastMonthStart;
+        } else {
+            lastMonthStart = new Date((thisYear-1)+'-'+thisMonthIndex+'-01');
+            return lastMonthStart;
+        }
+        return lastMonthStart;
+    }
+
+
+jQuery(document).ready(function(){
     
     jQuery.get( "https://api.github.com/repos/abelcallejo/abelcallejo.github.io/commits", function( data ) {
     var lastCommit = new Date(data[0].commit.author.date);
@@ -15,9 +44,23 @@ jQuery(document).ready(function(){
     var yesterday = new Date();
     yesterday.setDate(timeStamp.getDate() - 1);
     
-    var lastWeek = getLastWeekStart(timeStamp);
+    console.log(lastCommit);
 
     var difference = Math.floor((timeStamp - lastCommit) / (1000*60*60*24));
+    if(1<=difference){
+        lastCommit.setHours(0,0,0,0)
+        console.log(lastCommit);
+    }
+
+    console.log(timeStamp);
+    console.log(yesterday);
+    console.log(difference);
+
+        
+    var lastWeek = getLastWeekStart(timeStamp);
+    var lastLastWeek = getLastLastWeekStart(timeStamp);
+    var lastLastLastWeek = getLastLastLastWeekStart(timeStamp);
+    var lastMonth = getLastMonthStart(timeStamp);
     
     var asOf = "";
 
@@ -29,25 +72,29 @@ jQuery(document).ready(function(){
         {
         asOf = "just yesterday";
         }
+    else if( 2<=difference && difference<=6 )
+        {
+        asOf = "this passed " + days[lastCommit.getDay()];
+        }
+    else if( lastWeek<=lastCommit && 7<=difference && difference<=13 )
+        {
+        asOf = "last week";
+        }
+    else if( lastLastWeek<=lastCommit && 8<=difference && difference<=20 )
+        {
+        asOf = "2 weeks ago";
+        }
+    else if( lastLastLastWeek<=lastCommit && 15<=difference && difference<=27 )
+        {
+        asOf = "3 weeks ago";
+        }
     else if( lastCommit.getFullYear()==timeStamp.getFullYear() && lastCommit.getMonth()==timeStamp.getMonth() && lastCommit.getDate()<=timeStamp.getDate() )
         {
         asOf = "this month";
         }
-    else if( difference>=21 )
+    else if( lastMonth<=lastCommit )
         {
-        asOf = "3 weeks ago";
-        }
-    else if( difference>=14 )
-        {
-        asOf = "2 weeks ago";
-        }
-    else if( lastWeek<=lastCommit )
-        {
-        asOf = "last week";
-        }
-    else if( difference>=2 )
-        {
-        asOf = "this passed " + days[lastCommit.getDay()];
+        asOf = "last month";
         }
     else{
         asOf = months[lastCommit.getMonth()] + ' ' + lastCommit.getDate() + ', ' + lastCommit.getFullYear();

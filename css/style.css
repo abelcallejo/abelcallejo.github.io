@@ -1,10 +1,11 @@
 body{
     font-family: 'Roboto', sans-serif;
-    font-size: 11pt !important;
+    font-size: 12pt !important;
 }
 p{
-    margin: 12px 0px !important;
+    margin: 15px 0px !important;
     text-align: justify;
+    line-height: 18pt;
 }
 h4{
     font-size: 13pt !important;
@@ -74,6 +75,7 @@ a{
     width: 100%;
     overflow: hidden;
     box-shadow: 0px 2px 10px rgba(0,0,0,0.36);
+    margin: 15px 0px;
 }
 .tv-black{
     background: #000;
@@ -93,4 +95,49 @@ a{
 }
 .shown-for-humans-only{
     font-style: italic;
+    color: #ff0000 !important;
 }
+.shown-for-humans-only:hover{
+    text-decoration: none;
+}
+.box-for-humans{
+    padding: 15px;
+    background: #fcfcfc;
+    border: 1px solid #d0d0d0;
+}
+.box-for-humans-divider{
+    border: 1px solid #d0d0d0;
+    border-bottom: none;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.g-recaptcha{
+    min-height: 78px;
+}
+.realm-node{
+    margin-top: 15px;
+    display: inline-block;
+}
+
+@media (max-width: 767px){
+    .hidden-xs-down{
+        display: none;
+    }
+    .realm-node{
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 768px){
+    .hidden-sm-down{
+        display: none;
+    }
+    .realm-node{
+        font-size: 1.1em;
+    }
+}
+@media (min-width: 992px){
+    .realm-node{
+        font-size: 1em;
+    }
+}
+
